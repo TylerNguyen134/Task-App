@@ -1,0 +1,1 @@
+// Delete operation function for task

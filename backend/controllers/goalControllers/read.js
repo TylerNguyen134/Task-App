@@ -1,0 +1,1 @@
+// Read operation function for goal

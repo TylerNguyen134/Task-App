@@ -1,0 +1,1 @@
+// Create operation function for goal
