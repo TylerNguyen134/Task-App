@@ -8,7 +8,7 @@ exports.readGoalById = async (req, res) => {
         if (!goalId) {
             return res.status(404).json({ error: 'Goal not found' });
         }
-        res.status(200).json(goalbyId); // Respond with the found goal and a 200 status code
+        res.status(200).json(goalId); // Respond with the found goal and a 200 status code
         console.log('Goal found successfully: ', goalId);
     } catch (error) {
         console.error('Error finding goal by ID: ', error);
