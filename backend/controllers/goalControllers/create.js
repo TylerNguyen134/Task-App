@@ -1,7 +1,7 @@
 // Create operation function for goal
 const { Goal } = require('../../model/dbSchema');
 
-// Define and eport new async function to create a new goal
+// Define and export new async function to create a new goal
 exports.createGoal = async (req, res) => {
     try {
         const newGoal = new Goal(req.body); // Create a new Goal instance with the request body
