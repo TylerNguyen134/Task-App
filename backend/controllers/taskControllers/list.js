@@ -1,4 +1,4 @@
-// list opoeration fucnction for tasks
+// list operation fucnction for tasks
 const { Task } = require('../../model/dbSchema');
 
 exports.listTasks = async (req, res) => {
