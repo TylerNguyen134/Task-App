@@ -12,7 +12,7 @@ router.get('/', goalController.listGoals);
 // Get a single goal by ID
 router.get('/:id', goalController.readGoalById);
 
-//  and roUpdate a goal by ID
+// Update a goal by ID
 router.put('/:id', goalController.updateGoal);
 
 // Delete a goal by ID
