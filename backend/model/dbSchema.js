@@ -1,12 +1,12 @@
 /* This file: 
-* Defines both goal and task object structures for mongoDB
-* Creates both goal and task mongoDB schemas using the objects' structures
-* Exports both Goal and Task models for use in other parts of the application
+* Defines both project and task object structures for mongoDB
+* Creates both project and task mongoDB schemas using the objects' structures
+* Exports both project and Task models for use in other parts of the application
 */
 const mongoose = require('mongoose');
 
-// Define the structure of Goal documents in the database: taskObjects can be children stored in an array
-const goalObject = {
+// Define the structure of project documents in the database: taskObjects can be children stored in an array
+const projectObject = {
     //MongoDB will automatically create an _id field for each document
     title: {
         type: String,
@@ -26,11 +26,11 @@ const goalObject = {
     }],
     completed: {
         type: Boolean,
-        default: false, // Goal is not completed by default
+        default: false, // project is not completed by default
     },
 };
 
-// Define the structure of Task documents in the database: goalObject can be a parent object
+// Define the structure of Task documents in the database: projectObject can be a parent object
 const taskObject = {
     //MongoDB will automatically create an _id field for each document
     title: {
@@ -64,11 +64,11 @@ const taskObject = {
     }
 };
 
-// Goal Schma for MongoDB: Pass in above goalObject structure
-const goalSchema = new mongoose.Schema(goalObject);
+// project Schma for MongoDB: Pass in above projectObject structure
+const projectSchema = new mongoose.Schema(projectObject);
 // Task Schema for MongoDB: Pass in above taskObject structure
 const taskSchema = new mongoose.Schema(taskObject);
 
 //Export models
-module.exports.Goal = mongoose.model('Goal', goalSchema);
+module.exports.project = mongoose.model('project', projectSchema);
 module.exports.Task = mongoose.model('Task', taskSchema);

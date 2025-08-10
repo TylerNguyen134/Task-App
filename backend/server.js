@@ -6,7 +6,7 @@ require('dotenv').config();
 
 // Import routers from route files
 const taskRouter = require('./routes/taskRoutes');
-const goalRouter = require('./routes/goalRoutes');
+const projectRouter = require('./routes/projectRoutes');
 
 //************************************
 // RUN npm run devstart to start the server
@@ -30,7 +30,7 @@ mongoose.connect(uri)
 app.use(express.json());
 
 app.use('/task', taskRouter) // Connect to routers from route files: Tells Express to use routes defined in taskRouter for any URL starting with /task
-app.use('/goal', goalRouter) // Connect to routers from route files: Tells Express to use routes defined in goalRouter for any URL starting with /goal
+app.use('/project', projectRouter) // Connect to routers from route files: Tells Express to use routes defined in projectRouter for any URL starting with /project
 
 // Change listening port in production
 // Listen for HTTP requests on local host

@@ -1,7 +1,7 @@
 # Task-App
 
 ## Introduction
-Small full stack application for managing stand alone and recurring goals and tasks. This repo contains both the app's frontend and backend. 
+Small full stack application for managing stand alone and recurring projects and tasks. This repo contains both the app's frontend and backend. 
 
 ---
 
@@ -15,9 +15,9 @@ Small full stack application for managing stand alone and recurring goals and ta
 - [License](#license)
 
 ### Features
-- Create, read, update, and delete tasks and goals
-- Link tasks to goals
-- Mark tasks and goals as completed
+- Create, read, update, and delete tasks and projects
+- Link tasks to projects
+- Mark tasks and projects as completed
 - RESTful API with Express and MongoDB
 
 ### Getting Started
@@ -34,12 +34,12 @@ Small full stack application for managing stand alone and recurring goals and ta
 - `PUT /task/:id` — Update a task by ID
 - `DELETE /task/:id` — Delete a task by ID
 
-#### Goals
-- `POST /goal` — Create a new goal
-- `GET /goal` — List all goals
-- `GET /goal/:id` — Get a goal by ID
-- `PUT /goal/:id` — Update a goal by ID
-- `DELETE /goal/:id` — Delete a goal by ID
+#### projects
+- `POST /project` — Create a new project
+- `GET /project` — List all projects
+- `GET /project/:id` — Get a project by ID
+- `PUT /project/:id` — Update a project by ID
+- `DELETE /project/:id` — Delete a project by ID
 
 ### Testing
 You can use [curl](https://curl.se/) or [Postman](https://www.postman.com/) to test API endpoints.
