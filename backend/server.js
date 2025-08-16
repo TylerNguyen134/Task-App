@@ -8,6 +8,10 @@ require('dotenv').config();
 const taskRouter = require('./routes/taskRoutes');
 const projectRouter = require('./routes/projectRoutes');
 
+// CORS middleware to allow cross-domain requests
+const cors = require('cors');
+app.use(cors());
+
 //************************************
 // RUN npm run devstart to start the server
 // devstart defined package.json, runs nodemon on server.js

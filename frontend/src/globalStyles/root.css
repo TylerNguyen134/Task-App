@@ -1,0 +1,18 @@
+:root {
+    --color-primary: #7F00FF; 
+    --color-black: #000000; 
+    --color-dark: #363949;
+    --color-grey: #454545;
+    --color-lightGrey: #d3d3d3;
+    --color-hover: #fafafa; 
+    --color-lineGrey:#d3d3d3;
+
+    --color-white: #F5F5F5;
+    --color-background: #e5e8eb;
+    --color-light: rgba(54, 53, 53, 0.18);
+    --color-hover: #5a01b4;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+    --border-radius: 0.7rem;
+
+}
