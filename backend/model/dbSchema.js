@@ -5,6 +5,26 @@
 */
 const mongoose = require('mongoose');
 
+// Define the structure of Milestone documents in the database: projectObject can be a parent object
+const milestoneObject = {
+    title: {
+        type: String,
+        required: true,
+    },
+    completed: {
+        type: Boolean,
+        default: false, // milestone is not completed by default
+    },
+    order: {
+        type: Number,
+        required: true, // Order of the milestone in the project
+    },
+    dueDate: {
+        type: String, // Make own date format: DD-MM-YYYY
+        required: false, // Due date is optional
+    },
+    notes: [String], // Simple notes structure: array of note strings
+}
 // Define the structure of project documents in the database: taskObjects can be children stored in an array
 const projectObject = {
     //MongoDB will automatically create an _id field for each document
@@ -20,10 +40,13 @@ const projectObject = {
         type: String, // Make own date format: DD-MM-YYYY
         required: true,
     },
-    tasks: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Task'
-    }],
+    milestones: [milestoneObject], // Array of milestone objects
+    status: {
+        type: String,
+        enum: ['wish list', 'in progress', 'completed', 'paused', 'vaulted'], // Only allow these values
+        default: 'not started', // Default status is 'not started' 
+        required: true, // Status is required
+    },
     completed: {
         type: Boolean,
         default: false, // project is not completed by default

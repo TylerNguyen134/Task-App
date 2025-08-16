@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
 }
 
-.App-logo {
-  height: 40vmin;
+.app-bg {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff; /* Main white background for left side */
+}
+
+.rightSide-box {
+  flex: 1;
+  background: linear-gradient(135deg, #838bc2 0%, #333f63 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative patterns for right side */
+.rightSide-box::before,
+.rightSide-box::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.18;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.rightSide-box::before {
+  width: 340px;
+  height: 340px;
+  background: #838bc2;
+  top: 12%;
+  left: 60%;
+  transform: translate(-50%, -50%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.rightSide-box::after {
+  width: 180px;
+  height: 180px;
+  background: #fff;
+  bottom: 12%;
+  right: 10%;
+  transform: translate(50%, 50%);
+  opacity: 0.08;
+}
+
+/* Login card styles */
+.login-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(51, 63, 99, 0.10);
+  padding: 4rem 2rem;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #333f63;
 }
 
-.App-link {
-  color: #61dafb;
+.login-card h2 {
+  color: #333f63;
+  margin-bottom: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-card form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-card label {
+  display: flex;
+  flex-direction: column;
+  color: #838bc2;
+  font-weight: 500;
+}
+
+.login-card input {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #838bc2;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #333f63;
+  background: #f7f8fa;
+}
+
+.login-card input::placeholder {
+  color: #838bc2;
+  opacity: 0.7;
+}
+
+.login-card button {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  background: #838bc2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.login-card button:hover {
+  background: #333f63;
+  color: #fff;
 }
