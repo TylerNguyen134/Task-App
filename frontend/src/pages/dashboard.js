@@ -2,18 +2,29 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import ProjectCard from '../components/dashboardComponents/projectCard';
-//import './dashboard.css';
+import './dashboard.css';
 
 // Importing api handlers
 import { GET } from '../api/projectApi';
 
 // Category containers for different project cards
 function CategoryContainer({ title, children }) {
+    const [expanded, setExpanded] = useState(true); // State to toggle category expansion
     // Pass in title and children (list of ProjectCard components)
     return (
         <div className='category-container'>
-            <h2 classNAme='category-title'>{title}</h2>
-            <div className="catgory-content">{children}</div>
+            <div className="category-header">
+                <h2 className='category-title'>{title}</h2>
+                <i
+                    className={`bx ${expanded ? 'bx-chevron-down' : 'bx-chevron-up'}`}
+                    style={{ cursor: 'pointer', fontSize: '1.5rem' }}
+                    onClick={() => setExpanded(exp => !exp)}
+                ></i>
+            </div>
+            {/* Only render children (project cards) if expanded */}
+            <div className={`category-content${expanded ? ' expanded' : ' collapsed'}`}>
+                {children}
+            </div>
         </div>
     );
 }
@@ -37,7 +48,6 @@ function Dashboard() {
     // Filer returned projects objects by status
     const wishListProjects = projects.filter(p => p.status === "wish list");
     const inProgressProjects = projects.filter(p => p.status === "in progress");
-    const pausedProjects = projects.filter(p => p.status === "paused");
     const completedProjects = projects.filter(p => p.status === "completed");
     const vaultedProjects = projects.filter(p => p.status === "vaulted");
 
@@ -53,21 +63,23 @@ function Dashboard() {
                 ))}
             </CategoryContainer>
 
-            <div className='in-progress-container'>
+            <CategoryContainer title="In Progress">
+                {inProgressProjects.map((project) => (
+                    <ProjectCard key={project._id} {...project} />
+                ))}
+            </CategoryContainer>
 
-            </div>
+            <CategoryContainer title="Completed">
+                {completedProjects.map((project) => (
+                    <ProjectCard key={project._id} {...project} />
+                ))}
+            </CategoryContainer>
 
-            <div className='paused-container'>
-
-            </div>
-
-            <div className='completed-container'>
-
-            </div>
-
-            <div className='vaulted-container'>
-
-            </div>
+            <CategoryContainer title="Vaulted">
+                {vaultedProjects.map((project) => (
+                    <ProjectCard key={project._id} {...project} />
+                ))}
+            </CategoryContainer>
         </div>
     );
 }

@@ -43,9 +43,13 @@ const projectObject = {
     milestones: [milestoneObject], // Array of milestone objects
     status: {
         type: String,
-        enum: ['wish list', 'in progress', 'completed', 'paused', 'vaulted'], // Only allow these values
+        enum: ['wish list', 'in progress', 'completed', 'vaulted'], // Only allow these values
         default: 'not started', // Default status is 'not started' 
         required: true, // Status is required
+    },
+    technologies: {
+        type: [String], // Array of strings to store multiple technologies
+        required: false, // Technologies are optional
     },
     completed: {
         type: Boolean,
