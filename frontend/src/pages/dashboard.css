@@ -1,0 +1,47 @@
+/* Main Dashboard layout styling */
+.projects-board-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    /* space between columns */
+    align-items: flex-start;
+    /* align containers at the top */
+    margin-left: 4rem;
+}
+
+.category-container {
+    min-width: 20rem;
+    margin-top: 2rem;
+    background: var(--lighter-grey);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.category-title {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+}
+
+.category-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 62.5rem; /* May need to adjust in the future*/
+}
+
+.category-content.collapsed {
+  max-height: 0;
+  padding: 0;
+}
+
+.bx-chevron-down{
+    color: var(--light-grey);
+}
