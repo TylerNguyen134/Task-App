@@ -1,7 +1,7 @@
 # Task-App
 
 ## Introduction
-Small full stack application for managing stand alone and recurring projects and tasks. This repo contains both the app's frontend and backend. 
+Small full stack application for managing stand alone and recurring projects and tasks. This repo contains both the app"s frontend and backend. 
 
 ---
 

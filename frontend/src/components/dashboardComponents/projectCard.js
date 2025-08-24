@@ -1,26 +1,29 @@
-import './projectCard.css';
+import "./projectCard.css";
 // Component for reusable project card structure
 
-function ProjectCard({ title, description, targetDate, milestones, status, completed }) {
+function ProjectCard({ title, description, targetDate, milestones, status, completed, onClick }) {
     // Conditional header coloring based on project status
-    const headerStyle =  {
-         backgroundColor: status === 'wish list' ? '#333F63' : '#838BC2'
+    const headerStyle = {
+        backgroundColor: status === "wish list" ? "#333F63" : "#838BC2"
     };
- 
-
-
     // Creating card structure using passed props
     return (
-        <div className="project-card">
+        <div
+            className="project-card"
+            onClick={onClick}
+            style={{ cursor: "pointer" }}
+            tabIndex={0}
+            role="button" // Announces as a button for screen readers
+        >
             <div className="project-card-header" style={headerStyle}>
                 <h3 className="project-card-title">{title}</h3>
                 <button
                     className="edit-btn"
                     aria-label="Edit Project"
+                    onClick={e => { e.stopPropagation(); /* Prevents card click when edit is clicked */ }}
                 >
-                    <i className='bx bx-edit'></i>
+                    <i className="bx bx-edit"></i>
                 </button>
-
             </div>
             <div className="project-card-body">
                 <p>{description}</p>

@@ -1,22 +1,22 @@
 //Landing page for Task-App: User login page
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import Dashboard from './pages/dashboard';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import Dashboard from "./pages/dashboard";
+import "./App.css";
 
 function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     // Temp user name and password
-    const tempUserName = 'user';
-    const tempPassword = 'password';
+    const tempUserName = "user";
+    const tempPassword = "password";
     e.preventDefault();
     // Handle temp login logic, push to dashboard page if sucessful
     if(username === tempUserName && password === tempPassword){
-      navigate('/dashboard');
+      navigate("/dashboard");
     }
   };
 

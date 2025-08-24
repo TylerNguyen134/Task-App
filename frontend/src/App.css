@@ -22,7 +22,7 @@
 /* Decorative patterns for right side */
 .rightSide-box::before,
 .rightSide-box::after {
-  content: '';
+  content: "";
   position: absolute;
   border-radius: 50%;
   opacity: 0.18;

@@ -32,7 +32,6 @@
 }
 
 .category-content {
-  overflow: hidden;
   transition: max-height 0.3s ease;
   max-height: 62.5rem; /* May need to adjust in the future*/
 }
