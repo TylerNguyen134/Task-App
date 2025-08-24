@@ -1,6 +1,6 @@
 // Delete operation function for task
-const { Task } = require('../../model/dbSchema');
-const mongoose= require('mongoose');
+const { Task } = require("../../model/dbSchema");
+const mongoose= require("mongoose");
 
 
 exports.deleteTask = async(req, res) =>{
@@ -9,16 +9,16 @@ exports.deleteTask = async(req, res) =>{
 
         // Check if the task ID is valid
         if (!mongoose.Types.ObjectId.isValid(taskId)) {
-            return res.status(400).json({ error: 'Invalid task ID format' });
+            return res.status(400).json({ error: "Invalid task ID format" });
         }
 
         const deleteTask = await Task.findByIdAndDelete(taskId); // Delete task by Id
         // If task not found, return 404
         if (!deleteTask) {
-            return res.status(404).json({ error: 'Task not found' });
+            return res.status(404).json({ error: "Task not found" });
         }
     } catch (error) {
-        console.error('Error deleting task: ', error);
-        res.status(500).json({ error: 'Internal server error' });
+        console.error("Error deleting task: ", error);
+        res.status(500).json({ error: "Internal server error" });
     }
 };

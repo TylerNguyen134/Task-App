@@ -1,9 +1,9 @@
 /* This file: 
 * Defines both project and task object structures for mongoDB
-* Creates both project and task mongoDB schemas using the objects' structures
+* Creates both project and task mongoDB schemas using the objects" structures
 * Exports both project and Task models for use in other parts of the application
 */
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 // Define the structure of Milestone documents in the database: projectObject can be a parent object
 const milestoneObject = {
@@ -43,8 +43,8 @@ const projectObject = {
     milestones: [milestoneObject], // Array of milestone objects
     status: {
         type: String,
-        enum: ['wish list', 'in progress', 'completed', 'vaulted'], // Only allow these values
-        default: 'not started', // Default status is 'not started' 
+        enum: ["wish list", "in progress", "completed", "vaulted"], // Only allow these values
+        default: "not started", // Default status is "not started" 
         required: true, // Status is required
     },
     technologies: {
@@ -74,7 +74,7 @@ const taskObject = {
     },
     priority: {
         type: String,
-        enum: ['low', 'medium', 'high'], // Only allow these values
+        enum: ["low", "medium", "high"], // Only allow these values
         required: true,
     },
     dateAssigned: {
@@ -97,5 +97,5 @@ const projectSchema = new mongoose.Schema(projectObject);
 const taskSchema = new mongoose.Schema(taskObject);
 
 //Export models
-module.exports.project = mongoose.model('project', projectSchema);
-module.exports.Task = mongoose.model('Task', taskSchema);
+module.exports.project = mongoose.model("project", projectSchema);
+module.exports.Task = mongoose.model("Task", taskSchema);

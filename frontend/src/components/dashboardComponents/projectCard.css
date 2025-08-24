@@ -1,6 +1,6 @@
 /* Styling for Project Card Component */
 
-.project-card-header{
+.project-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,29 +10,39 @@
     padding-right: 1rem;
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
+    box-shadow: var(--floating-card-shadow);
 }
 
-.project-card-title{
+.project-card {
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    background: var(--color-white);
+    box-shadow: var(--floating-card-shadow);
+
+}
+
+.project-card-title {
     color: var(--color-white);
 }
 
-.project-card-body{
+.project-card-body {
     background: var(--color-white);
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-bottom: 1rem;;
+    padding-bottom: 1rem;
     margin-top: 0;
     padding-top: 0.5rem;
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
+
 }
 
 .edit-btn {
-  background: none;
-  color: var(--color-white);
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin-left: 0.5rem;
- font-size: 1.75rem;;
+    background: none;
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 0.5rem;
+    font-size: 1.75rem;
 }

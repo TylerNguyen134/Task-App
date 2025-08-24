@@ -10,7 +10,7 @@
  *   These functions are imported and used in multiple react components.
  * 
  * Notes:
- *   - The backend endpoint is assumed to be '/task'.
+ *   - The backend endpoint is assumed to be "/task".
  *   - Adjust endpoint if backend route changes.
  *   - Returns a Response object (axiosResponse) with JSON data or an error message.
  */

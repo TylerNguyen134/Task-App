@@ -1,0 +1,99 @@
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 340px;
+  max-width: 95vw;
+  box-shadow: 0 12px 40px rgba(51,63,99,0.22), 0 4px 16px rgba(0,0,0,0.13);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.popup-title {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #333F63;
+  font-weight: 700;
+  text-align: center;
+}
+
+.popup-form label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  display: block;
+  color: #333F63;
+  
+}
+
+.popup-form input[type="text"],
+.popup-form textarea,
+.popup-form select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1.5px solid #333F63;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  background: #f7f8fa;
+  color: #222;
+  resize: vertical;
+  transition: border 0.2s;
+   box-sizing: border-box;
+}
+
+.popup-form input[type="checkbox"] {
+  margin-left: 0.5rem;
+  transform: scale(1.2);
+}
+
+.popup-form input:focus,
+.popup-form textarea:focus {
+  border-color: #838BC2;
+  outline: none;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.popup-form select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  
+  border: 1.5px solid #333F63;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  background: #f7f8fa;
+  color: #222;
+  transition: border 0.2s;
+}
+
+.popup-form button {
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  border: none;
+  background: #333F63;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.popup-form button:hover {
+  background: #838BC2;
+}
